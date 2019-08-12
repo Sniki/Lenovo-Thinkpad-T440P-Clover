@@ -7,18 +7,18 @@ DefinitionBlock("", "SSDT", 2, "T440P", "_KBD", 0)
 #endif
     External (_SB.PCI0.LPC.EC, DeviceObj)
     External (_SB.PCI0.LPC.KBD, DeviceObj)
-
+    
     Scope (_SB.PCI0.LPC.EC)
     {
-        Method (_Q14, 0, NotSerialized)  // Brightness Up
+        Method (_Q14, 0, NotSerialized)  // (F15) Brightness Up
         {
             Notify (KBD, 0x0406)
         }
-        Method (_Q15, 0, NotSerialized)  // Brightness Down
+        Method (_Q15, 0, NotSerialized)  // (F14) Brightness Down
         {
             Notify (KBD, 0x0405)
         }
-        Method (_Q6A, 0, NotSerialized)  // (F4) Microphone Mute - Siri
+        Method (_Q6A, 0, NotSerialized)  // (F4) Microphone Mute Toggle
         {
             Notify (KBD, 0x033E)
         }
@@ -47,7 +47,7 @@ DefinitionBlock("", "SSDT", 2, "T440P", "_KBD", 0)
             Notify (KBD, 0x036A)
         }
     }
-
+    
     Scope (_SB.PCI0.LPC.KBD)
     {
         // Select specific configuration in VoodooPS2Trackpad.kext
@@ -96,10 +96,9 @@ DefinitionBlock("", "SSDT", 2, "T440P", "_KBD", 0)
                     Package() { },
                     "e037=64", // PrtSc=F13
                 },
-            },  
+            },
         })
     }
 #ifndef NO_DEFINITIONBLOCK
 }
 #endif
-//EOF

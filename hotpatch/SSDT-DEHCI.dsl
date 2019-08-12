@@ -1,4 +1,4 @@
-// Disabling EHCI #1 (and EHCI #2)
+// Disable EHCI Controllers (EH01 and EH02)
 
 #ifndef NO_DEFINITIONBLOCK
 DefinitionBlock("", "SSDT", 2, "T440P", "_DEHCI", 0)
@@ -7,7 +7,7 @@ DefinitionBlock("", "SSDT", 2, "T440P", "_DEHCI", 0)
     External(_SB.PCI0.EH01, DeviceObj)
     External(_SB.PCI0.EH02, DeviceObj)
     External(_SB.PCI0.LPC, DeviceObj)
-
+    
     // registers needed for disabling EHC#1
     Scope(_SB.PCI0.EH01)
     {
@@ -53,7 +53,7 @@ DefinitionBlock("", "SSDT", 2, "T440P", "_DEHCI", 0)
             ^^EH01.PSTE = 3
             // disable EHCI#1 PCI space
             ^^LPC.FDE1 = 1
-
+            
             // disable EHCI#2
             // put EHCI#2 in D3hot (sleep mode)
             ^^EH02.PSTE = 3
@@ -64,4 +64,3 @@ DefinitionBlock("", "SSDT", 2, "T440P", "_DEHCI", 0)
 #ifndef NO_DEFINITIONBLOCK
 }
 #endif
-//EOF

@@ -12,6 +12,10 @@
 			<false/>
 			<key>Fixes</key>
 			<dict>
+				<key>AddPNLF</key>
+				<true/>
+				<key>AddMCHC</key>
+				<true/>
 				<key>FixHPET</key>
 				<true/>
 				<key>FixIPIC</key>
@@ -44,16 +48,6 @@
 					<data>X0RTTQ==</data>
 					<key>Replace</key>
 					<data>WERTTQ==</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>Change XHCI to XHC</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>WEhDSQ==</data>
-					<key>Replace</key>
-					<data>WEhDXw==</data>
 				</dict>
 				<dict>
 					<key>Comment</key>
@@ -117,16 +111,6 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>Change Method(_PTS,1,N) to ZPTS</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>X1BUUwE=</data>
-					<key>Replace</key>
-					<data>WlBUUwE=</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
 					<string>Change Method(_WAK,1,N) to ZWAK</string>
 					<key>Disabled</key>
 					<false/>
@@ -177,16 +161,6 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>Change Method(L1D,0,N) to XL1D</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>X0wxRA==</data>
-					<key>Replace</key>
-					<data>WEwxRA==</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
 					<string>Change Method(_Q15,0,N) to XQ15</string>
 					<key>Disabled</key>
 					<false/>
@@ -207,7 +181,7 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>Change Method(_Q6A,0,N) to XQ28</string>
+					<string>Change Method(_Q6A,0,N) to XQ6A</string>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
@@ -217,7 +191,7 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>Change Method(_Q16,0,N) to XQ19</string>
+					<string>Change Method(_Q16,0,N) to XQ16</string>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
@@ -227,7 +201,7 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>Change Method(_Q64,0,N) to XQ2A</string>
+					<string>Change Method(_Q64,0,N) to XQ64</string>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
@@ -375,10 +349,6 @@
 				<integer>1</integer>
 				<key>framebuffer-con2-type</key>
 				<data>AAEAAA==</data>
-				<key>framebuffer-con2-pipe</key>
-				<data>EgAAAA==</data>
-				<key>framebuffer-con2-flags</key>
-				<data>BgAAAA==</data>
 			</dict>
 			<key>PciRoot(0)/Pci(0x03,0)</key>
 			<dict>
@@ -404,6 +374,10 @@
 			<key>Inject</key>
 			<true/>
 		</dict>
+		<key>SetIntelBacklight</key>
+		<true/>
+		<key>SetIntelMaxBacklight</key>
+		<true/>
 		<key>UseIntelHDMI</key>
 		<false/>
 	</dict>
@@ -454,9 +428,7 @@
 			<true/>
 		</dict>
 		<key>Theme</key>
-		<string>Embedded</string>
-		<key>EmbeddedThemeType</key>
-		<string>Dark</string>
+		<string>ThinkPad</string>
 	</dict>
 	<key>Graphics</key>
 	<dict>
@@ -477,9 +449,7 @@
 		<key>DellSMBIOSPatch</key>
 		<false/>
 		<key>ForceKextsToLoad</key>
-		<array>
-			<string>\System\Library\Extensions\IONetworkingFamily.kext</string>
-		</array>
+		<array/>
 		<key>KernelLapic</key>
 		<true/>
 		<key>KernelPm</key>

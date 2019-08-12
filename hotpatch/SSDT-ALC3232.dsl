@@ -41,4 +41,3 @@ DefinitionBlock ("", "SSDT", 1, "Sniki", "_ALC3232", 0)
 #ifndef NO_DEFINITIONBLOCK
 }
 #endif
-//EOF
