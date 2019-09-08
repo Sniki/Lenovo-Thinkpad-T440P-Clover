@@ -8,8 +8,6 @@
 		<true/>
 		<key>DSDT</key>
 		<dict>
-			<key>DropOEM_DSM</key>
-			<false/>
 			<key>Fixes</key>
 			<dict>
 				<key>AddPNLF</key>
@@ -22,23 +20,11 @@
 				<true/>
 				<key>FixMutex</key>
 				<true/>
-				<key>FixRTC</key>
-				<true/>
 				<key>FixTMR</key>
 				<true/>
 			</dict>
 			<key>Patches</key>
 			<array>
-				<dict>
-					<key>Comment</key>
-					<string>Change _OSI to XOSI</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>X09TSQ==</data>
-					<key>Replace</key>
-					<data>WE9TSQ==</data>
-				</dict>
 				<dict>
 					<key>Comment</key>
 					<string>Change _DSM to XDSM</string>
@@ -78,36 +64,6 @@
 					<data>U0FUMQ==</data>
 					<key>Replace</key>
 					<data>U0FUQQ==</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>Change B0D3 to HDAU</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>QjBEMw==</data>
-					<key>Replace</key>
-					<data>SERBVQ==</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>Change PCI0.VID to IGPU #1 (Thinkpad)</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>UENJMFZJRF8=</data>
-					<key>Replace</key>
-					<data>UENJMElHUFU=</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>Change PCI0.VID to IGPU #2 (Thinkpad)</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>VklEXwhfQURSDAAAAgA=</data>
-					<key>Replace</key>
-					<data>SUdQVQhfQURSDAAAAgA=</data>
 				</dict>
 				<dict>
 					<key>Comment</key>
@@ -251,17 +207,7 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>Instant Wake Fix 1(_PRW 0x0d, 0x03) to (0x0d, 0x00)</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>EhUDCg0KA14=</data>
-					<key>Replace</key>
-					<data>EhUDCg0KAF4=</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>Instant Wake Fix 2(_PRW 0x0d, 0x04) to (0x0d, 0x00)</string>
+					<string>Instant Wake Fix (_PRW 0x0d, 0x04) to (0x0d, 0x00)</string>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
@@ -277,30 +223,13 @@
 			<string>SSDT-XCPM.aml</string>
 			<string>SSDT-PluginType1.aml</string>
 		</array>
-		<key>DropTables</key>
-		<array>
-			<dict>
-				<key>Signature</key>
-				<string>#MCFG</string>
-			</dict>
-			<dict>
-				<key>Signature</key>
-				<string>DMAR</string>
-			</dict>
-		</array>
-		<key>FixHeaders</key>
-		<true/>
 		<key>SSDT</key>
 		<dict>
-			<key>DropOem</key>
-			<false/>
 			<key>Generate</key>
 			<dict>
 				<key>PluginType</key>
 				<true/>
 			</dict>
-			<key>NoOemTableId</key>
-			<false/>
 		</dict>
 	</dict>
 	<key>Boot</key>
@@ -308,7 +237,7 @@
 		<key>#DefaultVolume</key>
 		<string>LastBootedVolume</string>
 		<key>Arguments</key>
-		<string>dart=0 -cdfon</string>
+		<string>dart=0 -cdfon -igfxnohdmi</string>
 		<key>NeverHibernate</key>
 		<true/>
 		<key>Secure</key>
@@ -320,11 +249,6 @@
 	<string>This file is for Lenovo Thinkpad T440P</string>
 	<key>Devices</key>
 	<dict>
-		<key>Audio</key>
-		<dict>
-			<key>Inject</key>
-			<integer>0</integer>
-		</dict>
 		<key>Properties</key>
 		<dict>
 			<key>PciRoot(0)/Pci(0x02,0)</key>
@@ -335,60 +259,29 @@
 				<data>EgQAAA==</data>
 				<key>framebuffer-cursormem</key>
 				<data>AACQAA==</data>
-				<key>framebuffer-patch-enable</key>
-				<integer>1</integer>
-				<key>## @1 HDMI</key>
-				<string></string>
-				<key>framebuffer-con1-alldata</key>
-				<data>AQUSAAAEAACHAAAA</data>
-				<key>framebuffer-con1-enable</key>
-				<integer>1</integer>
-				<key>## @2 VGA</key>
-				<string></string>
-				<key>framebuffer-con2-enable</key>
-				<integer>1</integer>
-				<key>framebuffer-con2-type</key>
-				<data>AAEAAA==</data>
 			</dict>
 			<key>PciRoot(0)/Pci(0x03,0)</key>
 			<dict>
 				<key>#Comment</key>
 				<string>Intel HDMI Audio Codec</string>
 				<key>layout-id</key>
-				<integer>28</integer>
+				<data>HAAAAA==</data>
 			</dict>
 			<key>PciRoot(0)/Pci(0x1b,0)</key>
 			<dict>
 				<key>#Comment</key>
 				<string>Realtek ALC3232 Audio Codec</string>
 				<key>layout-id</key>
-				<integer>28</integer>
+				<data>HAAAAA==</data>
 			</dict>
-		</dict>
-		<key>USB</key>
-		<dict>
-			<key>AddClockID</key>
-			<true/>
-			<key>FixOwnership</key>
-			<true/>
-			<key>Inject</key>
-			<true/>
 		</dict>
 		<key>SetIntelBacklight</key>
 		<true/>
 		<key>SetIntelMaxBacklight</key>
 		<true/>
-		<key>UseIntelHDMI</key>
-		<false/>
 	</dict>
-	<key>DisableDrivers</key>
-	<array>
-		<string>VBoxHfs</string>
-	</array>
 	<key>GUI</key>
 	<dict>
-		<key>#ScreenResolution</key>
-		<string>1920x1080</string>
 		<key>Custom</key>
 		<dict>
 			<key>Entries</key>
@@ -430,28 +323,8 @@
 		<key>Theme</key>
 		<string>ThinkPad</string>
 	</dict>
-	<key>Graphics</key>
-	<dict>
-		<key>Inject</key>
-		<dict>
-			<key>ATI</key>
-			<false/>
-			<key>Intel</key>
-			<false/>
-			<key>NVidia</key>
-			<false/>
-		</dict>
-	</dict>
 	<key>KernelAndKextPatches</key>
 	<dict>
-		<key>AppleRTC</key>
-		<true/>
-		<key>DellSMBIOSPatch</key>
-		<false/>
-		<key>ForceKextsToLoad</key>
-		<array/>
-		<key>KernelLapic</key>
-		<true/>
 		<key>KernelPm</key>
 		<true/>
 		<key>KernelToPatch</key>
@@ -487,8 +360,6 @@
 				<data>igKEwOtC</data>
 			</dict>
 		</array>
-		<key>KextsToPatch</key>
-		<array/>
 	</dict>
 	<key>RtVariables</key>
 	<dict>
