@@ -9,7 +9,7 @@
 /* Begin PBXFileReference section */
 		DF21B65D22C81D6A007C7E2F /* kexts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = kexts; sourceTree = "<group>"; };
 		DF21B65E22C81D71007C7E2F /* Themes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Themes; sourceTree = "<group>"; };
-		DF778E28230191DB0000B29E /* SSDT-T440P.aml */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SSDT-T440P.aml"; sourceTree = "<group>"; };
+		DF78299923297A530017CB23 /* SSDT-T440P.aml */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SSDT-T440P.aml"; sourceTree = "<group>"; };
 		DFC5B0DE22B5BA5A008BC62F /* hotpatch */ = {isa = PBXFileReference; lastKnownFileType = folder; path = hotpatch; sourceTree = "<group>"; };
 		DFC5B0DF22B5BA5A008BC62F /* config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = config.plist; sourceTree = "<group>"; };
 		DFC5B0E022B5BA63008BC62F /* Audio */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Audio; sourceTree = "<group>"; };
@@ -19,7 +19,7 @@
 		DFC5B0D722B5BA32008BC62F = {
 			isa = PBXGroup;
 			children = (
-				DF778E28230191DB0000B29E /* SSDT-T440P.aml */,
+				DF78299923297A530017CB23 /* SSDT-T440P.aml */,
 				DFC5B0DF22B5BA5A008BC62F /* config.plist */,
 				DFC5B0E022B5BA63008BC62F /* Audio */,
 				DFC5B0DE22B5BA5A008BC62F /* hotpatch */,
@@ -34,7 +34,7 @@
 		DFC5B0D822B5BA32008BC62F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1030;
 			};
 			buildConfigurationList = DFC5B0DB22B5BA32008BC62F /* Build configuration list for PBXProject "T440P" */;
 			compatibilityVersion = "Xcode 9.3";
@@ -42,6 +42,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = DFC5B0D722B5BA32008BC62F;
 			projectDirPath = "";
