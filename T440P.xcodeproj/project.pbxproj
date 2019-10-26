@@ -34,7 +34,7 @@
 		DFC5B0D822B5BA32008BC62F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1030;
+				LastUpgradeCheck = 1110;
 			};
 			buildConfigurationList = DFC5B0DB22B5BA32008BC62F /* Build configuration list for PBXProject "T440P" */;
 			compatibilityVersion = "Xcode 9.3";
