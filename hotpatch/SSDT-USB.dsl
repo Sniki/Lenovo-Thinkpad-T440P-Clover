@@ -1,11 +1,7 @@
 // USB Port Injector for Lenovo ThinkPad T440P
-// Disabled FingerPrint Reader as it's not supported on macOS
-// Disable ESEL
 
-#ifndef NO_DEFINITIONBLOCK
 DefinitionBlock ("", "SSDT", 2, "T440P", "_USB", 0)
 {
-#endif
     Device(UIAC)
     {
         Name(_HID, "UIA00000")
@@ -65,11 +61,4 @@ DefinitionBlock ("", "SSDT", 2, "T440P", "_USB", 0)
             },
         })
     }
-    External(_SB.PCI0.XHC, DeviceObj)
-    Method(_SB.PCI0.XHC.ESEL)
-    {
-        // do nothing
-    }
-#ifndef NO_DEFINITIONBLOCK
 }
-#endif

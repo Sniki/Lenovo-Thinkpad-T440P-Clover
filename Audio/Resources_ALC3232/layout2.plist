@@ -306,7 +306,7 @@
 			<key>LineIn</key>
 			<dict>
 				<key>MuteGPIO</key>
-				<integer>1342242854</integer>
+				<real>1342242842</real>
 			</dict>
 			<key>Mic</key>
 			<dict/>
