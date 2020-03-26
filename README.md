@@ -1,1 +1,1 @@
-# Lenovo Thinkpad T440P
+# Lenovo ThinkPad T440P
